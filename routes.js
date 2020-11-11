@@ -1,9 +1,8 @@
 module.exports = function registrationRoutes(reg) {
 
     async function home(req, res) {
-        
-            var allRegistrations = await reg.allRegistrations()
-            res.render('home', {
+            var allRegistrations = await reg.allRegistration()
+            res.render('main', {
                 regNumb: allRegistrations
             });
 
@@ -29,23 +28,23 @@ module.exports = function registrationRoutes(reg) {
                 req.flash('error', 'Please enter a registration!')
             }
 
-            var all = await reg.allRegistrations()
-            res.render('home', {
+            var all = await reg.allRegistration()
+            res.render('main', {
                 regNumb: all
             })
     }
     async function filterAll(req, res) {
         var filter = req.query.filter
-        //from handlebars selection section
+        //from handlebars selection 
     
             const filtering = await reg.filterTowns(filter)
-            res.render('home', {
+            res.render('main', {
                 regNumb: filtering
             })
     }
     async function clear(req, res) {
             await reg.clear()
-            res.render('home')
+            res.render('main')
     }
 
 

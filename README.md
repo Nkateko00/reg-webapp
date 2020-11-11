@@ -1,0 +1,1 @@
+[![Build Status](https://travis-ci.org/Nkateko00/reg-webapp.svg?branch=main)](https://travis-ci.org/Nkateko00/reg-webapp)
