@@ -9,7 +9,7 @@ create table registration
     id serial not null primary key,
     reg_number varchar not null,
     -- specifies number of characters i want to have in registration
-    places_id int,
+    places_id int not null,
     foreign key (places_id) references places(id)
 
 );

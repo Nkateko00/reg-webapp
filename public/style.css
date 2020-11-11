@@ -25,6 +25,7 @@ button {
     padding: 1em;
     margin: 0.5em;
     color: black;
+    display: inline-block;
     font-size: medium;
     font-family: 'Architects Daughter', cursive;
 }

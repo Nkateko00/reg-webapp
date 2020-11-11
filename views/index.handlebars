@@ -8,13 +8,7 @@
             <p class="eg">e.g. CA 54321 | CY 123-456 | CJ 143812</p>
         </div>
         
-         <div class="regShow">
-            <ul>
-                {{#each regNumb}}
-                <li class="regColor">{{this.regNumb}}</li>
-                {{/each}}
-            </ul>
-        </div>
+    
         <div class="denied">
             {{#if messages}}
             {{messages.error}}
@@ -22,7 +16,7 @@
         </div>
 
         <div class="getData">
-            <input name="regData" class="textArea" placeholder="Please enter your registration here">
+            <input name="regData" class="textArea" placeholder="enter registration here">
             <button type="submit" name="addBtn">Add</button>
         </div>
     </form>
@@ -37,7 +31,13 @@
             <button type="submit">Filter</button>
         </div>
 
-
+             <div class="regShow">
+            
+                {{#each regNumb}}
+                <p class="regColor">{{this.reg_number}}</p>
+                {{/each}}
+            
+        </div>
        
 
     </form>

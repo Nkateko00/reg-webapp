@@ -28,11 +28,8 @@ module.exports = function registrationRoutes(reg) {
                 req.flash('error', 'Please enter a registration!')
             }
 
-            var all = await reg.allRegistration()
 
-            res.render('index', {
-                regNumb: all
-            })
+            res.render('index')
     }
     async function filterAll(req, res) {
         var filter = req.query.filter

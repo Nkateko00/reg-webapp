@@ -30,7 +30,7 @@ describe("Registration function", function () {
         assert.deepEqual([{ reg_number: 'CA 1234' }],[{ reg_number: 'CA 1234' }], allRegistration);
     });
 
-    it("should add more than one registrations to  database", async function () {
+    it("should add more than one registration to  database", async function () {
         const reg = Reg(pool)
 
         const registration = 'CJ 123456';
