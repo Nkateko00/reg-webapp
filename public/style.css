@@ -1,0 +1,58 @@
+@media(min-width:480px) {
+    .container {
+        height: 100vh;
+        width: 80vw;
+        background-color: whitesmoke;
+        margin: 6em;
+        padding: 3em;
+        text-align: center;
+        color: grey;
+        border-radius: 0.5em;
+        border: 1px solid #ddd;
+        font-family: 'Architects Daughter', cursive;
+    }
+}
+
+button {
+    padding: 1em;
+    color: white;
+    font-size: medium;
+    border-radius: 0.5em;
+    background-color: red;
+    font-family: 'Architects Daughter', cursive;
+}
+
+.getData {
+    color: red;
+    font-size: 1em;
+    text-align: center;
+    padding-top: 1.5em;
+    margin: 0.5em;
+
+}
+
+.regShow {
+    padding: 1em;
+    margin: 0.5em;
+    font-size: medium;
+    font-family: 'Architects Daughter', cursive;
+}
+
+.granted {
+    text-align:  center;
+    font-family: 'Architects Daughter', cursive;
+    color : green;
+}
+.error{
+    color : red ;
+    text-align: center;
+    font-family: 'Architects Daughter', cursive;
+}
+
+.header{
+    text-align: center;
+}
+.a{
+    color : white
+
+}

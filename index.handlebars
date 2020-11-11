@@ -1,0 +1,57 @@
+<div class="container">
+    <form action="/reg_numbers" method="POST">
+
+        <div class="header">
+            <h1>Registration App</h1>
+        </div>
+        <div class="example">
+            <p class="eg">e.g. CAA 54321 | CY 123-456 | CJ 143812</p>
+        </div>
+
+        <div class="denied">
+            {{#if messages}}
+            {{messages.error}}
+            {{/if}}
+        </div>
+
+        <div class="getData">
+            <input name="regData" class="" placeholder="Please enter your registration here">
+            <button type="submit" name="addBtn">Add</button>
+        </div>
+    </form>
+    <form action="/reg_numbers" method="GET">
+        <div class="choices">
+            <select name="filter">
+                <option value='all'>All</option>
+                <option value='1'>Cape Town</option>
+                <option value='2'>Paarl</option>
+                <option value='3'>Bellville</option>
+            </select>
+            <button type="submit">Filter</button>
+        </div>
+
+
+        <div class="regShow">
+            <ul>
+                {{#each regNumb}}
+                <li class="regColor">{{this.reg_number}}</li>
+                {{/each}}
+            </ul>
+        </div>
+
+    </form>
+
+    <div class="granted">
+        {{#if messages}}
+        {{messages.success}}
+        {{/if}}
+    </div>
+
+    <form action="/clear" method="GET">
+
+        <div class="clear">
+            <button type="submit" name="clearBtn">Clear items</button>
+        </div>
+    </form>
+
+</div>
