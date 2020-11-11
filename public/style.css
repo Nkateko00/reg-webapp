@@ -21,19 +21,10 @@ button {
     background-color: red;
     font-family: 'Architects Daughter', cursive;
 }
-
-.getData {
-    color: red;
-    font-size: 1em;
-    text-align: center;
-    padding-top: 1.5em;
-    margin: 0.5em;
-
-}
-
 .regShow {
     padding: 1em;
     margin: 0.5em;
+    color: black;
     font-size: medium;
     font-family: 'Architects Daughter', cursive;
 }
@@ -43,7 +34,7 @@ button {
     font-family: 'Architects Daughter', cursive;
     color : green;
 }
-.error{
+.denied{
     color : red ;
     text-align: center;
     font-family: 'Architects Daughter', cursive;
@@ -54,5 +45,25 @@ button {
 }
 .a{
     color : white
+
+}
+.example{
+     color : blue
+}
+ 
+input{
+   text-align:  center;
+    border-radius: 0.5em;
+    padding : 1em;
+    font-size: large;
+    font-family: 'Architects Daughter', cursive;
+    margin: 1.5em;
+}
+select{
+    text-align:  center;
+    margin: 1.5em;
+    border-radius: 1.5em;
+    padding : 1em;
+    font-size: large;
 
 }

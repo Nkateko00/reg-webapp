@@ -9,7 +9,7 @@ const Routes = require('./routes')
 
 const pg = require("pg");
 const Pool = pg.Pool;
-const connectionString = process.env.DATABASE_URL || 'postgresql://teko:teko123@localhost:5432/places';
+const connectionString = process.env.DATABASE_URL || 'postgresql://teko:teko123@localhost:5432/registration';
 const pool = new Pool({
     connectionString
 });

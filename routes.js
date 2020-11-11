@@ -2,7 +2,7 @@ module.exports = function registrationRoutes(reg) {
 
     async function home(req, res) {
             var allRegistrations = await reg.allRegistration()
-            res.render('main', {
+            res.render('index', {
                 regNumb: allRegistrations
             });
 
@@ -15,7 +15,7 @@ module.exports = function registrationRoutes(reg) {
                 if (/C[AYJ] \d{3,6}$/.test(upperCase) || /C[AYJ] \d{3}-\d{3}$/.test(upperCase)) {
                     if (await reg.regCheck(upperCase) === 0) {
                         await reg.addRegistration(upperCase)
-                        req.flash('success', 'SUCCESS!')
+                        req.flash('success', 'Succesful!')
                     }else {
                         req.flash('error', 'registration already exists,enter a new one!')
                     }
@@ -29,7 +29,8 @@ module.exports = function registrationRoutes(reg) {
             }
 
             var all = await reg.allRegistration()
-            res.render('main', {
+
+            res.render('index', {
                 regNumb: all
             })
     }
@@ -38,13 +39,13 @@ module.exports = function registrationRoutes(reg) {
         //from handlebars selection 
     
             const filtering = await reg.filterTowns(filter)
-            res.render('main', {
+            res.render('index', {
                 regNumb: filtering
             })
     }
     async function clear(req, res) {
             await reg.clear()
-            res.render('main')
+            res.render('index')
     }
 
 
