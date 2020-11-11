@@ -2,14 +2,14 @@ let express = require('express');//to create web apps
 var exphbs = require('express-handlebars');//to render templates
 const bodyParser = require('body-parser');//require body parser for htm functionality
 const flash = require('express-flash');
-const sessions = require('express-session');
+const session = require('express-session');
 const Reg = require("./registration");
 const Routes = require('./routes')
 
 
 const pg = require("pg");
 const Pool = pg.Pool;
-const connectionString = process.env.DATABASE_URL || 'postgresql://teko:123@localhost:5432/places';
+const connectionString = process.env.DATABASE_URL || 'postgresql://teko:teko123@localhost:5432/places';
 const pool = new Pool({
     connectionString
 });

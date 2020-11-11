@@ -8,7 +8,6 @@ module.exports = function registrationRoutes(reg) {
             });
 
     }
-
     async function addReg(req, res) {
         var numb = req.body.regData
         var upperCase = numb.toUpperCase()
@@ -27,13 +26,9 @@ module.exports = function registrationRoutes(reg) {
                 }
             }
             else {
-                req.flash('error', 'please enter a registration!')
+                req.flash('error', 'Please enter a registration!')
             }
 
-
-
-            // if () {
-            // }
             var all = await reg.allRegistrations()
             res.render('home', {
                 regNumb: all

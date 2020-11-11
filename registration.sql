@@ -17,6 +17,8 @@ create table registration
 
 
 
-insert into places (places, registration) values ('Bellville', 'CY');
-insert into places (places, registration) values ('Cape Town', 'CA');
-insert into places (places, registration) values ('Paarl', 'CJ');
+insert into places (places, reg) values ('Bellville', 'CY');
+insert into places (places, reg) values ('Cape Town', 'CA');
+insert into places (places, reg) values ('Paarl', 'CJ');
+
+grant all privileges on database registration to teko;
