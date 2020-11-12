@@ -25,7 +25,7 @@ module.exports = function registrationRoutes(reg) {
                     else {
                         req.flash('error', 'registration already exists,enter a new one!')
                     }
-                }
+          }
                 else {
                     req.flash('error', 'Please enter a valid registration!')
                 }
