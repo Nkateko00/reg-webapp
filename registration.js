@@ -40,7 +40,7 @@ if (town === 'all') {
     return filter.rows
 }
 else {
-    const restOfTheTowns = await pool.query(`select * from registration where places_id = $1`, [town])
+    const restOfTheTowns = await pool.query(`select reg_number from registration where places_id = $1`, [town])
     return restOfTheTowns.rows
 }
 

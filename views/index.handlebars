@@ -7,11 +7,17 @@
         <div class="example">
             <p class="eg">e.g. CA 54321 | CY 123-456 | CJ 143812</p>
         </div>
-        
-    
+
+
         <div class="denied">
             {{#if messages}}
             {{messages.error}}
+            {{/if}}
+        </div>
+
+        <div class="granted">
+            {{#if messages}}
+            {{messages.success}}
             {{/if}}
         </div>
 
@@ -19,34 +25,29 @@
             <input name="regData" class="textArea" placeholder="enter registration here">
             <button type="submit" name="addBtn">Add</button>
         </div>
+
     </form>
     <form action="/reg_numbers" method="GET">
         <div class="choices">
             <select name="filter">
                 <option value='all'>All</option>
-                <option value='1'>Cape Town</option>
-                <option value='2'>Paarl</option>
+                <option value='2'>Cape Town</option>
+                <option value='1'>Paarl</option>
                 <option value='3'>Bellville</option>
             </select>
             <button type="submit">Filter</button>
         </div>
 
-             <div class="regShow">
-            
-                {{#each regNumb}}
-                <p class="regColor">{{this.reg_number}}</p>
-                {{/each}}
-            
+
+          <div class="regShow">
+
+            {{#each regNumb}}
+            <p class="regColor">{{this.reg_number}}</p>
+            {{/each}}
+
         </div>
-       
 
     </form>
-
-    <div class="granted">
-        {{#if messages}}
-        {{messages.success}}
-        {{/if}}
-    </div>
 
     <form action="/clear" method="GET">
 

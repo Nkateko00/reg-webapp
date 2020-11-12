@@ -24,7 +24,7 @@ button {
 .regShow {
     padding: 1em;
     margin: 0.5em;
-    color: black;
+    color: red;
     display: inline-block;
     font-size: medium;
     font-family: 'Architects Daughter', cursive;

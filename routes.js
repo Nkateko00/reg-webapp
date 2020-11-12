@@ -16,7 +16,13 @@ module.exports = function registrationRoutes(reg) {
                     if (await reg.regCheck(upperCase) === 0) {
                         await reg.addRegistration(upperCase)
                         req.flash('success', 'Succesful!')
-                    }else {
+
+                        var allRegistrations = await reg.allRegistration()
+                        res.render('index', {
+                            regNumb: allRegistrations
+                        });
+                    }
+                    else {
                         req.flash('error', 'registration already exists,enter a new one!')
                     }
                 }
