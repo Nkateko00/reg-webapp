@@ -16,7 +16,8 @@
     "pg": "^8.5.0"
   },
   "devDependencies": {
-    "mocha": "^8.2.1"
+    "mocha": "^8.2.1",
+    "start": "node index.js"
   },
   "scripts": {
     "test": "mocha"
