@@ -5,7 +5,7 @@
             <h1>Registration App</h1>
         </div>
         <div class="example">
-            <p class="eg">e.g. CA 12345 | CY 123-456 | CJ 123456</p>
+            <p class="eg">e.g. CA 12345 | CY 123-456 | CJ 12345</p>
         </div>
 
 
@@ -39,11 +39,12 @@
         </div>
 
 
-          <div class="regShow">
-
+        <div class="regShow">
+            <ul>
             {{#each regNumb}}
-            <p class="regColor">{{this.reg_number}}</p>
+                <li> {{this.reg_number}}</li>
             {{/each}}
+            </ul>
 
         </div>
 
