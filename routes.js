@@ -1,17 +1,22 @@
 module.exports = function registrationRoutes(reg) {
 
     async function home(req, res) {
+    try{
         var allRegistrations = await reg.allRegistration()
         res.render('index', {
             regNumb: allRegistrations
         });
+    }
+    catch(err){
+        next(err)
+    }
 
     }
     async function addReg(req, res) {
         var numb = req.body.regData
         var upperCase = numb.toUpperCase()
        
-
+     try{
 
         if (upperCase !== "") {
             
@@ -20,7 +25,6 @@ module.exports = function registrationRoutes(reg) {
                 if (await reg.regCheck(upperCase) === 0) {
                     await reg.addRegistration(upperCase)
                     req.flash('success', 'Succesful!')
-
                 }
                 else {
                     req.flash('error', 'registration already exists,enter a new one!')
@@ -28,8 +32,7 @@ module.exports = function registrationRoutes(reg) {
             }
             else {
                 req.flash('error', 'Please enter a valid registration!')
-            }
-            
+            }  
         }
         else {
             req.flash('error', 'Please enter a registration!')
@@ -38,15 +41,24 @@ module.exports = function registrationRoutes(reg) {
         res.render('index', {
             regNumb: allRegistrations
         });
+    }
+    catch(err){
+        next(err);
+    }
         }
     async function filterAll(req, res) {
         var filter = req.query.filter
         //from handlebars selection 
 
+    try{
+
         const filtering = await reg.filterTowns(filter)
         res.render('index', {
             regNumb: filtering
-        })
+        });}
+    catch(err){
+            next(err);
+        }
     }
     async function clear(req, res) {
         await reg.clear()
