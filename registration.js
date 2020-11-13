@@ -48,12 +48,14 @@ else {
 
 async function allRegistration() {
 const regNum = await pool.query('select reg_number from registration');
-return regNum.rows;
+// console.log(regNum.rows)
+ return regNum.rows;
 }
 
 async function clear() {
 const clear = await pool.query('delete from registration');
-return clear.rows
+return clear.rows;
+req.flash('success','Data Has Been Reset');
 }
 async function regCheck(regNumber) {
 

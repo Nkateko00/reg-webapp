@@ -51,18 +51,25 @@ module.exports = function registrationRoutes(reg) {
         //from handlebars selection 
 
     try{
-
+     
         const filtering = await reg.filterTowns(filter)
         res.render('index', {
             regNumb: filtering
-        });}
+           
+        })
+        ;}
     catch(err){
             next(err);
         }
     }
     async function clear(req, res) {
+        req.flash('success','data has been reset');
         await reg.clear()
-        res.render('index')
+        res.render('index',{
+        
+        })
+       
+
     }
 
     return {
