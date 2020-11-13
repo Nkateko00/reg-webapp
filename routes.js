@@ -53,7 +53,6 @@ module.exports = function registrationRoutes(reg) {
         res.render('index')
     }
 
-
     return {
         home,
         addReg,
