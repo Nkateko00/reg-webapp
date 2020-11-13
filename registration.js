@@ -55,7 +55,6 @@ const regNum = await pool.query('select reg_number from registration');
 async function clear() {
 const clear = await pool.query('delete from registration');
 return clear.rows;
-req.flash('success','Data Has Been Reset');
 }
 async function regCheck(regNumber) {
 

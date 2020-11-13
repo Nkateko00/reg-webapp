@@ -1,7 +1,7 @@
 module.exports = function registrationRoutes(reg) {
 
     async function home(req, res) {
-    try{
+        try{
         var allRegistrations = await reg.allRegistration()
         res.render('index', {
             regNumb: allRegistrations
@@ -16,11 +16,13 @@ module.exports = function registrationRoutes(reg) {
         var numb = req.body.regData
         var upperCase = numb.toUpperCase()
        
-     try{
+   
 
         if (upperCase !== "") {
             
-            if (/C[AYJ] \d{3,6}$/.test(upperCase) || /C[AYJ] \d{3}-\d{3}$/.test(upperCase)) {
+            if (/C[AYJ] \d{3,6}$/.test(upperCase) || /C[AYJ] \d{3}-\d{3}$/.test(upperCase))
+            
+            {
 
                 if (await reg.regCheck(upperCase) === 0) {
                     await reg.addRegistration(upperCase)
@@ -42,10 +44,7 @@ module.exports = function registrationRoutes(reg) {
             regNumb: allRegistrations
         });
     }
-    catch(err){
-        next(err);
-    }
-        }
+        
     async function filterAll(req, res) {
         var filter = req.query.filter
         //from handlebars selection 
