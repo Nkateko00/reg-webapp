@@ -19,7 +19,8 @@ let app = express();
 const reg = Reg(pool)
 const routes = Routes(reg)
 
-//setup handlebars ,Body-parser and public
+
+
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
@@ -42,7 +43,7 @@ app.get('/reg_numbers', routes.filterAll)
 app.get('/clear',routes.clear)
 
 
-const PORT = process.env.PORT || 2009;
+const PORT = process.env.PORT || 3009;
 
 app.listen(PORT, function () {
     console.log('App starting on port :' + PORT);

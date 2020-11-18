@@ -52,9 +52,11 @@ const regNum = await pool.query('select reg_number from registration');
  return regNum.rows;
 }
 
+
 async function clear() {
 const clear = await pool.query('delete from registration');
 return clear.rows;
+
 }
 async function regCheck(regNumber) {
 

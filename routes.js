@@ -16,8 +16,6 @@ module.exports = function registrationRoutes(reg) {
         var numb = req.body.regData
         var upperCase = numb.toUpperCase()
        
-   
-
         if (upperCase !== "") {
             
             if (/C[AYJ] \d{3,6}$/.test(upperCase) || /C[AYJ] \d{3}-\d{3}$/.test(upperCase))
@@ -65,7 +63,6 @@ module.exports = function registrationRoutes(reg) {
         req.flash('success','data has been reset');
         await reg.clear()
         res.render('index',{
-        
         })
        
 

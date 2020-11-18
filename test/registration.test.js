@@ -22,26 +22,22 @@ describe("Registration function", function () {
 
     it("should not add duplicates onto database", async function () {
     
-        var registration ="CA 1234";
-        // var registration2 ="CA 1234";
 
-        await reg.addRegistration(registration)
-        await reg.addRegistration(registration)
-        await reg.addRegistration(registration)
+        await reg.addRegistration("CA 1234")
+        await reg.addRegistration("CA 1234")
+        await reg.addRegistration("CA 1234")
 
         const allRegistration = await reg.allRegistration()
-        console.log(allRegistration);
+        // console.log(allRegistration);
 
         assert.deepEqual([{ reg_number: 'CA 1234' }], allRegistration);
     });
 
     it("should add more than one registration to  database", async function () {
 
-        var registration3 = "CA 56262";
-        var registration = "CJ 21779";
 
-        await reg.addRegistration(registration)
-        await reg.addRegistration(registration3)
+        await reg.addRegistration("CJ 21779")
+        await reg.addRegistration("CA 56262")
         
         assert.deepEqual( [{ reg_number: 'CJ 21779' },{ reg_number: 'CA 56262'}] 
         ,  await reg.allRegistration()
@@ -60,20 +56,14 @@ describe("Registration function", function () {
 
     it("should  filter all Bellville registrations ", async function () {
 
-        // await reg.addRegistration("CJ 12345")
+    
         await reg.addRegistration("CY 12365")
         await reg.addRegistration("CA 12345")
         // console.log(await reg.filterTowns('1') + "dsddsdsdsdsds")
 
-        assert.deepEqual(
-        [
-             {
-           reg_number: "CY 12365"
-         }
-            ],
+        assert.deepEqual([{  reg_number: "CY 12365"}], await reg.filterTowns('1'));
+       
       
-        
-         await reg.filterTowns('1'));
     });
 
     it("should  filter all Paarl registrations ", async function () {
@@ -86,6 +76,8 @@ describe("Registration function", function () {
          await reg.filterTowns('3'));
     });
     it("should filter for All the Towns", async function (){
+
+
         await reg.addRegistration("CA 123456");
         await reg.addRegistration("CY 1233");
         await reg.addRegistration("CJ 132456");
@@ -110,13 +102,10 @@ describe("Registration function", function () {
 
     it("should return all the registration numbers", async function () {
 
-        const registration = "CA 12345";
-        const registration2 = "CJ 123456";
-        const registration3 = "CY 123456";
 
-        await reg.addRegistration(registration)
-        await reg.addRegistration(registration2)
-        await reg.addRegistration(registration3)
+        await reg.addRegistration("CA 12345")
+        await reg.addRegistration("CJ 123456")
+        await reg.addRegistration("CY 123456")
 
 
         assert.deepEqual([{ reg_number: "CJ 123456" }], [{ reg_number: "CJ 123456" }], [{ reg_number: "CY 123456" }], 

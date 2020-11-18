@@ -18,3 +18,4 @@ insert into places (places, reg) values ('Bellville', 'CY');
 insert into places (places, reg) values ('Cape Town', 'CA');
 insert into places (places, reg) values ('Paarl', 'CJ');
 
+
